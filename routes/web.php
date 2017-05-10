@@ -25,3 +25,6 @@ Route::get('auth/logout', [
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/forgot/password' , function () {
+    return view('forgotPassword');
+});

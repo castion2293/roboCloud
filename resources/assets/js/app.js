@@ -9,6 +9,7 @@
 //
 // window.Vue = require('vue');
 import './bootstrap.js';
+import router from './routes.js';
 import example from './components/Example.vue';
 
 /**
@@ -21,5 +22,6 @@ import example from './components/Example.vue';
 
 const app = new Vue({
     el: '#app',
-    components: { example }
+    components: { example },
+    router
 });

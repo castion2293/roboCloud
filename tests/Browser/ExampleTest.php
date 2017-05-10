@@ -18,7 +18,13 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertSee('Robotech');
+                    ->assertSee('ROBOTECH CLOUD');
+        });
+
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->clickLink('忘記密碼?')
+                ->assertPathIs('/forgot/password');
         });
 
         $this->browse(function (Browser $browser) {

@@ -55,6 +55,12 @@
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="密碼">
                     </div>
+
+                    @if (count($errors))
+                        @foreach($errors->all() as $error)
+                            <b class="text-danger">{{ $error }}</b>
+                        @endforeach
+                    @endif
                     {{--<div class="form-group">--}}
                         {{--<input class="w3-check w3-blue" type="checkbox" checked="checked">--}}
                         {{--<label>Remember me</label>--}}
@@ -62,14 +68,8 @@
 
                     <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;margin-top:1em;">登入</button>
                     <div class="w3-right" style="margin-top:1em;">
-                        <a href="#" class="text-primary" style="text-decoration: none;font-weight: bold;">忘記密碼?</a>
+                        <a href="{{ url('/forgot/password') }}" class="text-primary" style="text-decoration: none;font-weight: bold;">忘記密碼?</a>
                     </div>
-
-                    @if (count($errors))
-                        @foreach($errors->all() as $error)
-                            {{ $error }}
-                        @endforeach
-                    @endif
                 </form>
             </div>
 
@@ -80,11 +80,17 @@
                         <h1 class="text-primary" style="font-family: Monda;font-size: 5em;">ROBOTECH CLOUD</h1>
                     </div>
                     <div class="form-group" style="margin-top:5em;">
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="電子信箱" style="font-size: 3em;">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="電子信箱" style="font-size: 3em;" value="{{ old('email') }}">
                     </div>
                     <div class="form-group" style="margin-top:3em;">
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="密碼" style="font-size: 3em;">
                     </div>
+
+                    @if (count($errors))
+                        @foreach($errors->all() as $error)
+                            <b class="text-danger" style="font-size: 3em;">{{ $error }}</b>
+                        @endforeach
+                    @endif
                     {{--<div class="form-group" >--}}
                         {{--<input style="font-size: 2em;" class="w3-check w3-blue" type="checkbox" checked="checked">--}}
                         {{--<label style="font-size: 2em;">Remember me</label>--}}
@@ -92,7 +98,7 @@
 
                     <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;font-size: 3em;margin-top:1em;">登入</button>
                     <div class="w3-right" style="margin-top:1em;">
-                        <a href="#" class="text-primary" style="text-decoration: none;font-weight: bold;font-size: 2em;">忘記密碼?</a>
+                        <a href="{{ url('/forgot/password') }}" class="text-primary" style="text-decoration: none;font-weight: bold;font-size: 2em;">忘記密碼?</a>
                     </div>
                 </form>
             </div>
