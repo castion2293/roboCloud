@@ -41,20 +41,59 @@
 
 </head>
 <body>
-    <div class="bgimg" style="height:100%;padding-top:15em;">
+    <div class="bgimg" style="height:100%;padding-top:12em;">
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-8" style="background-color: rgba(241, 241, 241, .5);">
-                <form class="">
-                    <h1>Robotech Cloud</h1>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <div class="col-lg-3 w3-padding-large w3-round-large w3-hide-medium w3-hide-small" style="background-color: rgba(241, 241, 241, .8);">
+                <form class="" action="{{ route('login') }}" method="post">
+                    {{ csrf_field() }}
+                    <div class="text-center">
+                        <h1 class="text-primary" style="font-family: Monda;font-size: 2em;">ROBOTECH CLOUD</h1>
+                    </div>
+                    <div class="form-group" style="margin-top:3em;">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="電子信箱" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="密碼">
                     </div>
-                    <button type="submit" class="btn btn-primary form-control">Submit</button>
+                    {{--<div class="form-group">--}}
+                        {{--<input class="w3-check w3-blue" type="checkbox" checked="checked">--}}
+                        {{--<label>Remember me</label>--}}
+                    {{--</div>--}}
+
+                    <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;margin-top:1em;">登入</button>
+                    <div class="w3-right" style="margin-top:1em;">
+                        <a href="#" class="text-primary" style="text-decoration: none;font-weight: bold;">忘記密碼?</a>
+                    </div>
+
+                    @if (count($errors))
+                        @foreach($errors->all() as $error)
+                            {{ $error }}
+                        @endforeach
+                    @endif
+                </form>
+            </div>
+
+            <div class="col-md-10 w3-padding-large w3-round-large w3-hide-large" style="background-color: rgba(241, 241, 241, .8);">
+                <form class="" action="{{ route('login') }}" method="post">
+                    {{ csrf_field() }}
+                    <div class="text-center">
+                        <h1 class="text-primary" style="font-family: Monda;font-size: 5em;">ROBOTECH CLOUD</h1>
+                    </div>
+                    <div class="form-group" style="margin-top:5em;">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="電子信箱" style="font-size: 3em;">
+                    </div>
+                    <div class="form-group" style="margin-top:3em;">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="密碼" style="font-size: 3em;">
+                    </div>
+                    {{--<div class="form-group" >--}}
+                        {{--<input style="font-size: 2em;" class="w3-check w3-blue" type="checkbox" checked="checked">--}}
+                        {{--<label style="font-size: 2em;">Remember me</label>--}}
+                    {{--</div>--}}
+
+                    <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;font-size: 3em;margin-top:1em;">登入</button>
+                    <div class="w3-right" style="margin-top:1em;">
+                        <a href="#" class="text-primary" style="text-decoration: none;font-weight: bold;font-size: 2em;">忘記密碼?</a>
+                    </div>
                 </form>
             </div>
         </div>
