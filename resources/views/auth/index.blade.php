@@ -66,7 +66,7 @@
                         {{--<label>Remember me</label>--}}
                     {{--</div>--}}
 
-                    <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;margin-top:1em;">登入</button>
+                    <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;margin-top:1em;"><b>登入</b></button>
                     <div class="w3-right" style="margin-top:1em;">
                         <a href="{{ url('/forgot/password') }}" class="text-primary" style="text-decoration: none;font-weight: bold;">忘記密碼?</a>
                     </div>
@@ -96,7 +96,7 @@
                         {{--<label style="font-size: 2em;">Remember me</label>--}}
                     {{--</div>--}}
 
-                    <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;font-size: 3em;margin-top:1em;">登入</button>
+                    <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;font-size: 3em;margin-top:1em;"><b>登入</b></button>
                     <div class="w3-right" style="margin-top:1em;">
                         <a href="{{ url('/forgot/password') }}" class="text-primary" style="text-decoration: none;font-weight: bold;font-size: 2em;">忘記密碼?</a>
                     </div>

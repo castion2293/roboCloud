@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return (auth()->check()) ? redirect('/home') : redirect('/auth/login');
+});
+Route::get('/auth/login', function () {
+    return view('auth.index');
 });
 Route::post('auth/login', [
     'uses' => 'Auth\LoginController@login',
@@ -22,9 +25,22 @@ Route::get('auth/logout', [
     'uses' => 'Auth\LoginController@logout',
     'as' => 'logout',
 ]);
-Route::get('/home', function () {
-    return view('home');
-});
 Route::get('/forgot/password' , function () {
-    return view('forgotPassword');
+    return view('auth/forgotPassword');
+});
+Route::post('password/email', [
+    'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail',
+    'as' => 'postPasswordEmail'
+]);
+Route::get('password/reset/{token?}', [
+    'uses' => 'Auth\ResetPasswordController@showResetForm',
+    'as' => 'password.reset'
+]);
+Route::post('password/reset', [
+    'uses' => 'Auth\ResetPasswordController@reset',
+    'as' => 'postPasswordReset'
+]);
+
+Route::middleware('auth.basic')->get('/home', function () {
+    return view('home');
 });

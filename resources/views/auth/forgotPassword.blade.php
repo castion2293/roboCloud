@@ -44,7 +44,7 @@
 <div class="bgimg" style="height:100%;padding-top:12em;">
     <div class="row justify-content-center">
         <div class="col-lg-3 w3-padding-large w3-round-large w3-hide-medium w3-hide-small" style="background-color: rgba(241, 241, 241, .8);">
-            <form class="" action="" method="post">
+            <form class="" action="{{ route('postPasswordEmail') }}" method="post">
                 {{ csrf_field() }}
                 <div class="text-center">
                     <h1 class="text-primary" style="font-family: Monda;font-size: 2em;">ROBOTECH CLOUD</h1>
@@ -61,13 +61,13 @@
 
                 <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;margin-top:1em;">送出</button>
                 <div class="w3-right" style="margin-top:1em;">
-                    <a href="{{ url('/') }}" class="text-primary" style="text-decoration: none;font-weight: bold;">登入</a>
+                    <a href="{{ url('/') }}" class="text-primary" style="text-decoration: none;font-weight: bold;">回登入頁面</a>
                 </div>
             </form>
         </div>
 
         <div class="col-md-10 w3-padding-large w3-round-large w3-hide-large" style="background-color: rgba(241, 241, 241, .8);">
-            <form class="" action="{{ route('login') }}" method="post">
+            <form class="" action="{{ route('postPasswordEmail') }}" method="post">
                 {{ csrf_field() }}
                 <div class="text-center">
                     <h1 class="text-primary" style="font-family: Monda;font-size: 5em;">ROBOTECH CLOUD</h1>
@@ -84,7 +84,7 @@
 
                 <button type="submit" class="btn btn-primary form-control" style="cursor:pointer;font-size: 3em;margin-top:1em;">送出</button>
                 <div class="w3-right" style="margin-top:1em;">
-                    <a href="{{ ('/') }}" class="text-primary" style="text-decoration: none;font-weight: bold;font-size: 2em;">登入</a>
+                    <a href="{{ ('/') }}" class="text-primary" style="text-decoration: none;font-weight: bold;font-size: 2em;">回登入頁面</a>
                 </div>
             </form>
         </div>
