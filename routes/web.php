@@ -41,6 +41,13 @@ Route::post('password/reset', [
     'as' => 'postPasswordReset'
 ]);
 
-Route::middleware('auth.basic')->get('/home', function () {
-    return view('home');
+Route::group(['middleware' => 'auth.basic'], function () {
+    Route::get('/home', function () {
+        return view('home');
+    });
+    Route::get('/home/getCurrentUser', [
+        'uses' => 'UserController@getCurrentUser',
+        'as' => 'getCurrentUser'
+    ]);
 });
+

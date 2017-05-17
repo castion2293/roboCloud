@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Robotech Cloud @yield('title')</title>
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
 
     <script>
@@ -23,6 +24,6 @@
     @yield('scripts')
 </div>
 
-<script src="{{ URL::to('js/app.js') }}"></script>
+<script src="{{ URL::to('js/app2.js') }}"></script>
 </body>
 </html>
