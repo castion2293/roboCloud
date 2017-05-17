@@ -11,7 +11,7 @@
 import './bootstrap.js';
 import router from './routes.js';
 import example from './components/Example.vue';
-
+import dashboard from './components/Dashboard.vue';
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -22,6 +22,6 @@ import example from './components/Example.vue';
 
 const app = new Vue({
     el: '#app',
-    components: { example },
+    components: { example, dashboard },
     router
 });

@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-    <h1>dashboard User:{{  Auth::user()->name }}</h1>
-    <example></example>
+    <dashboard></dashboard>
 @endsection
 
 @section('scripts')

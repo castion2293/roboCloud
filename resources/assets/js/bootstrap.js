@@ -41,4 +41,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue';
 
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import 'vuetify/dist/vuetify.min.js'
+
 window.Vue = Vue;
+
+Vue.use(Vuetify)
+
+

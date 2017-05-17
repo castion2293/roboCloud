@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Robotech Cloud @yield('title')</title>
 
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -21,6 +23,6 @@
     @yield('scripts')
 </div>
 
-<script src="{{ URL::to('js/app.js') }}"></script>
+<script src="{{ URL::to('js/app2.js') }}"></script>
 </body>
 </html>
