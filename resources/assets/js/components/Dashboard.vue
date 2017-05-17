@@ -5,8 +5,10 @@
             <my-sidebar :sidebar="sidebar"
                         @close-sidebar="sidebar = !sidebar">
             </my-sidebar>
-            <v-content>
-                <v-container fluid></v-container>
+            <v-content class="grey lighten-4">
+                <v-container fluid>
+                    <router-view></router-view>
+                </v-container>
             </v-content>
         </main>
     </v-app>
