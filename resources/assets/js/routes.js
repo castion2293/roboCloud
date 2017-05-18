@@ -2,6 +2,10 @@ import VueRouter from 'vue-router';
 
 let routes = [
     {
+        path: '/profile',
+        component: require('./components/view/Profile.vue')
+    },
+    {
         path: '/about',
         component: require('./components/view/About.vue')
     },

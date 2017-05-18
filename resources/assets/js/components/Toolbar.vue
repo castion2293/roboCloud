@@ -17,27 +17,29 @@
             </v-btn>
             <v-list class="pt-0">
                 <v-list-item>
-                    <div class="grey darken-1">
+                    <div class="grey darken-1" style="width:12em;">
                         <v-list-tile-avatar class="pt-3 mb-3">
                             <img :src="user.user_profile_img" style="height:6em;width:6em;"  />
                         </v-list-tile-avatar>
-                        <p class="text-xs-center pb-2 w3-text-white">{{ user.name }}</p>
+                        <p class="text-xs-center pb-2 w3-text-white"><b>{{ user.name }}</b></p>
                     </div>
-                    <v-list-tile>
-                        <v-list-tile-title>adskfalsdfjaklsfjdkl</v-list-tile-title>
-                    </v-list-tile>
-                    <v-list-tile>
-                        <v-list-tile-title><b>基本資料</b></v-list-tile-title>
-                    </v-list-tile>
-                    <div>
-                        <a href="/auth/logout" style="text-decoration: none;">
+                    <router-link to="/profile" style="text-decoration: none;">
+                        <v-list-tile>
+                            <v-icon right>person</v-icon>
+                            <v-list-tile-title><b>基本資料</b></v-list-tile-title>
+                        </v-list-tile>
+                    </router-link>
+                    <div @click="logout">
+                        <v-list-tile>
                             <v-icon right>keyboard_tab</v-icon>
-                            <b>登出</b>
-                        </a>
+                            <v-list-tile-title><b>登出</b></v-list-tile-title>
+                        </v-list-tile>
                     </div>
                 </v-list-item>
             </v-list>
         </v-menu>
+
+        <a href="/auth/logout" ref="logout_link" style="display:none;"></a>
     </v-toolbar>
 </template>
 
@@ -54,6 +56,13 @@
                 .then(response => {
                     this.user = response.data
                 });
+        },
+
+        methods: {
+            logout () {
+                let logout = this.$refs.logout_link;
+                logout.click();
+            }
         }
     }
 </script>
