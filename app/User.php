@@ -58,4 +58,12 @@ class User extends Authenticatable
     {
         $this->notify(new ResetPasswordNotification($token, $this->email));
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
 }

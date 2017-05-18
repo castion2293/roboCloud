@@ -49,5 +49,8 @@ Route::group(['middleware' => 'auth.basic'], function () {
         'uses' => 'UserController@getCurrentUser',
         'as' => 'getCurrentUser'
     ]);
+    Route::get('/home/getProducts', function() {
+        return auth()->user()->products()->get();
+    });
 });
 

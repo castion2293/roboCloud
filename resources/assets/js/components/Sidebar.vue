@@ -30,6 +30,23 @@
                     <!--</v-list-tile>-->
                 <!--</v-list-item>-->
             <!--</template>-->
+
+            <v-list-group>
+                <v-list-item slot="item">
+                    <v-list-tile ripple>
+                        <v-list-tile-title v-text="'products'" />
+                        <v-list-tile-action>
+                            <v-icon>keyboard_arrow_down</v-icon>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                </v-list-item>
+                <v-list-item v-for="(product,i) in products" :key="i">
+                    <v-list-tile ripple>
+                        <v-list-tile-title v-text="product.name" />
+                    </v-list-tile>
+                </v-list-item>
+            </v-list-group>
+
             <v-list-item>
                 <router-link to="/about" exact style="text-decoration: none;">
                     <v-list-tile ripple>
@@ -46,6 +63,7 @@
                     </v-list-tile>
                 </router-link>
             </v-list-item>
+
         </v-list>
     </v-sidebar>
 </template>
@@ -73,7 +91,16 @@
                     { header: 'Another Header' },
                     { title: 'Link' }
                 ],
+                products: [],
             }
+        },
+
+        mounted () {
+            axios.get('/home/getProducts')
+                .then(response => {
+                    this.products = response.data;
+                    console.log(this.products);
+                });
         },
 
         computed: {
