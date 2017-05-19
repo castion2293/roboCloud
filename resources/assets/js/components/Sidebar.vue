@@ -48,11 +48,13 @@
             <!--</v-list-group>-->
 
             <v-list-item>
-                <v-list-tile ripple>
-                    <v-list-tile-title>
-                        {{ product.name }}
-                    </v-list-tile-title>
-                </v-list-tile>
+                <div class="grey darken-1 text-xs-center mt-3">
+                    <img :src="product.product_img" style="height:10em;width:10em;"  />
+                    <p class="text-xs-center mt-2 pb-2 w3-text-white"><b>{{ product.name }}</b></p>
+                </div>
+
+                <v-divider light />
+
                 <router-link to="/about" exact style="text-decoration: none;">
                     <v-list-tile ripple>
                         <v-list-tile-title>
