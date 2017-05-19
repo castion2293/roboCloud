@@ -88,6 +88,6 @@ class UserController extends Controller
      */
     public function getCurrentUser()
     {
-        return auth()->user();
+        return auth()->user()->with('products')->first();
     }
 }

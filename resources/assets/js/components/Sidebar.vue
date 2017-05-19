@@ -31,23 +31,28 @@
                 <!--</v-list-item>-->
             <!--</template>-->
 
-            <v-list-group>
-                <v-list-item slot="item">
-                    <v-list-tile ripple>
-                        <v-list-tile-title v-text="'products'" />
-                        <v-list-tile-action>
-                            <v-icon>keyboard_arrow_down</v-icon>
-                        </v-list-tile-action>
-                    </v-list-tile>
-                </v-list-item>
-                <v-list-item v-for="(product,i) in products" :key="i">
-                    <v-list-tile ripple>
-                        <v-list-tile-title v-text="product.name" />
-                    </v-list-tile>
-                </v-list-item>
-            </v-list-group>
+            <!--<v-list-group>-->
+                <!--<v-list-item slot="item">-->
+                    <!--<v-list-tile ripple>-->
+                        <!--<v-list-tile-title v-text="'products'" />-->
+                        <!--<v-list-tile-action>-->
+                            <!--<v-icon>keyboard_arrow_down</v-icon>-->
+                        <!--</v-list-tile-action>-->
+                    <!--</v-list-tile>-->
+                <!--</v-list-item>-->
+                <!--<v-list-item v-for="(product,i) in products" :key="i">-->
+                    <!--<v-list-tile ripple>-->
+                        <!--<v-list-tile-title v-text="product.name" />-->
+                    <!--</v-list-tile>-->
+                <!--</v-list-item>-->
+            <!--</v-list-group>-->
 
             <v-list-item>
+                <v-list-tile ripple>
+                    <v-list-tile-title>
+                        {{ product.name }}
+                    </v-list-tile-title>
+                </v-list-tile>
                 <router-link to="/about" exact style="text-decoration: none;">
                     <v-list-tile ripple>
                         <v-list-tile-title>
@@ -91,16 +96,28 @@
                     { header: 'Another Header' },
                     { title: 'Link' }
                 ],
-                products: [],
+                product: [],
             }
         },
 
         mounted () {
-            axios.get('/home/getProducts')
-                .then(response => {
-                    this.products = response.data;
-                    console.log(this.products);
-                });
+//            axios.get('/home/getProducts')
+//                .then(response => {
+//                    this.products = response.data;
+//                    console.log(this.products);
+//                });
+
+            Event.listen('myProduct', (product) => this.product = product);
+        },
+
+        created() {
+            this.$on('myProduct', );
+        },
+
+        methods: {
+            setSelectedClient(product) {
+                console.log(product);
+            },
         },
 
         computed: {

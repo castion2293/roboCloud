@@ -32,6 +32,10 @@
 
         methods: {
 
+        },
+
+        mounted () {
+
         }
     }
 </script>

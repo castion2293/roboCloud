@@ -3,6 +3,30 @@
         <v-toolbar-side-icon class="hidden-lg-and-up" @click.native.stop="$emit('toggle-sidebar')"  />
         <v-toolbar-title class="blue--text darken-1" style="font-family: Monda;font-size: 2em;">ROBOTECH CLOUD</v-toolbar-title>
         <v-spacer></v-spacer>
+
+        <v-list-tile>
+            <v-list-tile-content>
+                <v-list-tile-title class="w3-text-white">產品</v-list-tile-title>
+            </v-list-tile-content>
+        </v-list-tile>
+        <v-menu bottom left offset-y origin="top right" max-height="auto" transition="v-slide-y-transition" class="mr-4">
+            <v-btn icon slot="activator">
+                <v-icon class="w3-text-white">keyboard_arrow_down</v-icon>
+            </v-btn>
+            <v-list>
+                <v-list-item>
+                    <div v-for="product in user.products" @click="getProduct(product)">
+                        <router-link to="/profile" style="text-decoration: none;">
+                            <v-list-tile>
+                                <v-list-tile-title>{{ product.name }}</v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </div>
+                </v-list-item>
+            </v-list>
+        </v-menu>
+
+
         <v-list-tile avatar>
             <v-list-tile-avatar>
                 <img :src="user.user_profile_img" />
@@ -54,7 +78,7 @@
         mounted () {
             axios.get('/home/getCurrentUser')
                 .then(response => {
-                    this.user = response.data
+                    this.user = response.data;
                 });
         },
 
@@ -62,6 +86,9 @@
             logout () {
                 let logout = this.$refs.logout_link;
                 logout.click();
+            },
+            getProduct (product) {
+                Event.fire('myProduct', product);
             }
         }
     }
