@@ -60,10 +60,10 @@ class User extends Authenticatable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function products()
     {
-        return $this->hasMany('App\Product');
+        return $this->belongsToMany('App\Product', 'user_product');
     }
 }

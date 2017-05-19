@@ -101,11 +101,10 @@
         },
 
         mounted () {
-//            axios.get('/home/getProducts')
-//                .then(response => {
-//                    this.products = response.data;
-//                    console.log(this.products);
-//                });
+            axios.get('/home/getFirstProduct')
+                .then(response => {
+                    this.product = response.data;
+                });
 
             Event.listen('myProduct', (product) => this.product = product);
         },
