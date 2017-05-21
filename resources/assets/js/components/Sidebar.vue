@@ -57,15 +57,41 @@
 
                 <router-link to="/about" exact style="text-decoration: none;">
                     <v-list-tile ripple>
-                        <v-list-tile-title>
-                            About
+                        <v-icon class="ml-2">build</v-icon>
+                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                            <b>規格</b>
                         </v-list-tile-title>
                     </v-list-tile>
                 </router-link>
                 <router-link to="/contact" style="text-decoration: none;">
                     <v-list-tile ripple>
-                        <v-list-tile-title>
-                            Contact
+                        <v-icon class="ml-2">lightbulb_outline</v-icon>
+                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                            <b>狀態</b>
+                        </v-list-tile-title>
+                    </v-list-tile>
+                </router-link>
+                <router-link to="" style="text-decoration: none;">
+                    <v-list-tile ripple>
+                        <v-icon class="ml-2">equalizer</v-icon>
+                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                            <b>產能</b>
+                        </v-list-tile-title>
+                    </v-list-tile>
+                </router-link>
+                <router-link to="" style="text-decoration: none;">
+                    <v-list-tile ripple>
+                        <v-icon class="ml-2">settings</v-icon>
+                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                            <b>設定</b>
+                        </v-list-tile-title>
+                    </v-list-tile>
+                </router-link>
+                <router-link to="" style="text-decoration: none;">
+                    <v-list-tile ripple>
+                        <v-icon class="ml-2">local_phone</v-icon>
+                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                            <b>聯絡</b>
                         </v-list-tile-title>
                     </v-list-tile>
                 </router-link>
