@@ -18,8 +18,7 @@
 //                .then(response => {
 //                    this.user = response.data
 //                });
-            //this.fetchData();
-
+            this.fetchData();
             setInterval(this.fetchData, 10000)
         },
 
