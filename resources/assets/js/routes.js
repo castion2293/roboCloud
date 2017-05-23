@@ -10,8 +10,8 @@ let routes = [
         component: require('./components/view/About.vue')
     },
     {
-        path: '/contact',
-        component: require('./components/view/Contact.vue')
+        path: '/state',
+        component: require('./components/view/State.vue')
     }
 ];
 

@@ -63,14 +63,44 @@
                         </v-list-tile-title>
                     </v-list-tile>
                 </router-link>
-                <router-link to="/contact" style="text-decoration: none;">
-                    <v-list-tile ripple>
-                        <v-icon class="ml-2">lightbulb_outline</v-icon>
-                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
-                            <b>狀態</b>
-                        </v-list-tile-title>
-                    </v-list-tile>
-                </router-link>
+
+                <v-list-group>
+                    <v-list-item slot="item">
+                        <v-list-tile ripple>
+                            <v-icon class="ml-2">lightbulb_outline</v-icon>
+                            <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                                <b>狀態</b>
+                            </v-list-tile-title>
+                            <v-list-tile-action>
+                                <v-icon>keyboard_arrow_down</v-icon>
+                            </v-list-tile-action>
+                        </v-list-tile>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="/state" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>狀態1</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-tile ripple>
+                            <v-list-tile-title>
+                                <b>狀態2</b>
+                            </v-list-tile-title>
+                        </v-list-tile>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-tile ripple>
+                            <v-list-tile-title>
+                                <b>狀態3</b>
+                            </v-list-tile-title>
+                        </v-list-tile>
+                    </v-list-item>
+                </v-list-group>
+
                 <router-link to="" style="text-decoration: none;">
                     <v-list-tile ripple>
                         <v-icon class="ml-2">equalizer</v-icon>
@@ -107,23 +137,23 @@
 
         data () {
             return {
-                itemGroup: [
-                    { header: 'Header' },
-                    {
-                        title: 'Parent',
-                        group: '/company',
-                        items: [
-                            { title: 'Child' },
-                            { title: 'Child' },
-                            { title: 'Child' }
-                        ]
-                    },
-                    { title: 'Link' },
-                    { title: 'Link' },
-                    { divider: true },
-                    { header: 'Another Header' },
-                    { title: 'Link' }
-                ],
+//                itemGroup: [
+//                    { header: 'Header' },
+//                    {
+//                        title: 'Parent',
+//                        group: '/company',
+//                        items: [
+//                            { title: 'Child' },
+//                            { title: 'Child' },
+//                            { title: 'Child' }
+//                        ]
+//                    },
+//                    { title: 'Link' },
+//                    { title: 'Link' },
+//                    { divider: true },
+//                    { header: 'Another Header' },
+//                    { title: 'Link' }
+//                ],
                 product: [],
             }
         },
