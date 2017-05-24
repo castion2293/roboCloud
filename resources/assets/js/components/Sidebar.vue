@@ -80,7 +80,7 @@
                         <router-link to="/state" style="text-decoration: none;">
                             <v-list-tile ripple>
                                 <v-list-tile-title>
-                                    <b>狀態1</b>
+                                    <b>手臂內部狀態</b>
                                 </v-list-tile-title>
                             </v-list-tile>
                         </router-link>
@@ -101,14 +101,36 @@
                     </v-list-item>
                 </v-list-group>
 
-                <router-link to="" style="text-decoration: none;">
-                    <v-list-tile ripple>
-                        <v-icon class="ml-2">equalizer</v-icon>
-                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
-                            <b>產能</b>
-                        </v-list-tile-title>
-                    </v-list-tile>
-                </router-link>
+                <v-list-group>
+                    <v-list-item slot="item">
+                        <v-list-tile ripple>
+                            <v-icon class="ml-2">equalizer</v-icon>
+                            <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                                <b>產能</b>
+                            </v-list-tile-title>
+                            <v-list-tile-action>
+                                <v-icon>keyboard_arrow_down</v-icon>
+                            </v-list-tile-action>
+                        </v-list-tile>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="/yield" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>每週產能</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-tile ripple>
+                            <v-list-tile-title>
+                                <b>每月產能</b>
+                            </v-list-tile-title>
+                        </v-list-tile>
+                    </v-list-item>
+                </v-list-group>
+
                 <router-link to="" style="text-decoration: none;">
                     <v-list-tile ripple>
                         <v-icon class="ml-2">settings</v-icon>

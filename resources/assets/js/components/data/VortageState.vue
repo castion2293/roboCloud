@@ -13,9 +13,9 @@
                     data: {
                         labels: [],
                         datasets: [{
-                            label: '手臂溫度狀態',
-                            backgroundColor: 'rgba(255, 99, 132, 1)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
+                            label: '手臂電壓狀態',
+                            backgroundColor: 'rgba(255, 159, 64, 1)',
+                            borderColor: 'rgba(255, 159, 64, 1)',
                             data: [
                                 this.randomScalingFactor(),
                                 this.randomScalingFactor(),
@@ -54,13 +54,13 @@
         },
 
         mounted() {
+            this.initialTime();
             this.fetchData();
             setInterval(this.updataData, 1000);
         },
 
         methods: {
             fetchData () {
-                this.initialTime();
                 let ctx = this.$refs.canvas;
                 this.myChart = new Chart(ctx, this.config);
             },
@@ -73,14 +73,15 @@
             },
             randomScalingFactor () {
                 return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+
             },
             initialTime() {
                 for(let i = 0; i < 12; i++) {
                     if (i < 10)
-                        this.sec2 = i
+                        this.sec2 = i;
                     else {
-                        this.sec1 = 1
-                        this.sec2 = i -10
+                        this.sec1 = 1;
+                        this.sec2 = i - 10
                     }
 
                     this.config.data.labels.push(this.min1.toString() + this.min2.toString() + ':' + this.sec1.toString() + this.sec2.toString())
