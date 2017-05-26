@@ -83,7 +83,7 @@
                         this.sec2 = i -10
                     }
 
-                    this.config.data.labels.push(this.min1.toString() + this.min2.toString() + ':' + this.sec1.toString() + this.sec2.toString())
+                    this.config.data.labels.push(`${this.min1}${this.min2}:${this.sec1}${this.sec2}`)
                 }
             },
             updateTime() {
@@ -106,7 +106,7 @@
                     this.min1 = this.min2 = this.sec1 = this.sec2 = 0;
                 }
 
-                return this.min1.toString() + this.min2.toString() + ':' + this.sec1.toString() + this.sec2.toString()
+                return `${this.min1}${this.min2}:${this.sec1}${this.sec2}`
             }
         }
     }

@@ -6,47 +6,6 @@
             </v-btn>
         </div>
         <v-list dense>
-            <!--<template v-for="(item,i) in itemGroup">-->
-                <!--<v-list-group v-if="item.items">-->
-                    <!--<v-list-item slot="item">-->
-                        <!--<v-list-tile ripple>-->
-                            <!--<v-list-tile-title v-text="item.title" />-->
-                            <!--<v-list-tile-action>-->
-                                <!--<v-icon>keyboard_arrow_down</v-icon>-->
-                            <!--</v-list-tile-action>-->
-                        <!--</v-list-tile>-->
-                    <!--</v-list-item>-->
-                    <!--<v-list-item v-for="(subItem,i) in item.items" :key="i">-->
-                        <!--<v-list-tile ripple>-->
-                            <!--<v-list-tile-title v-text="subItem.title" />-->
-                        <!--</v-list-tile>-->
-                    <!--</v-list-item>-->
-                <!--</v-list-group>-->
-                <!--<v-subheader v-else-if="item.header" v-text="item.header" />-->
-                <!--<v-divider v-else-if="item.divider" light />-->
-                <!--<v-list-item v-else>-->
-                    <!--<v-list-tile ripple>-->
-                        <!--<v-list-tile-title v-text="item.title" />-->
-                    <!--</v-list-tile>-->
-                <!--</v-list-item>-->
-            <!--</template>-->
-
-            <!--<v-list-group>-->
-                <!--<v-list-item slot="item">-->
-                    <!--<v-list-tile ripple>-->
-                        <!--<v-list-tile-title v-text="'products'" />-->
-                        <!--<v-list-tile-action>-->
-                            <!--<v-icon>keyboard_arrow_down</v-icon>-->
-                        <!--</v-list-tile-action>-->
-                    <!--</v-list-tile>-->
-                <!--</v-list-item>-->
-                <!--<v-list-item v-for="(product,i) in products" :key="i">-->
-                    <!--<v-list-tile ripple>-->
-                        <!--<v-list-tile-title v-text="product.name" />-->
-                    <!--</v-list-tile>-->
-                <!--</v-list-item>-->
-            <!--</v-list-group>-->
-
             <v-list-item>
                 <div class="grey darken-1 text-xs-center mt-3">
                     <img :src="product.product_img" style="height:10em;width:10em;"  />
@@ -159,23 +118,6 @@
 
         data () {
             return {
-//                itemGroup: [
-//                    { header: 'Header' },
-//                    {
-//                        title: 'Parent',
-//                        group: '/company',
-//                        items: [
-//                            { title: 'Child' },
-//                            { title: 'Child' },
-//                            { title: 'Child' }
-//                        ]
-//                    },
-//                    { title: 'Link' },
-//                    { title: 'Link' },
-//                    { divider: true },
-//                    { header: 'Another Header' },
-//                    { title: 'Link' }
-//                ],
                 product: [],
             }
         },
