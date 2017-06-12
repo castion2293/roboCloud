@@ -24,6 +24,6 @@
     @yield('scripts')
 </div>
 
-<script src="{{ URL::to('js/app2.js') }}"></script>
+<script src="{{ URL::to('js/app.js') }}"></script>
 </body>
 </html>

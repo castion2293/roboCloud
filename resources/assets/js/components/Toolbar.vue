@@ -50,13 +50,28 @@
                     <router-link to="/profile" style="text-decoration: none;">
                         <v-list-tile>
                             <v-icon right>person</v-icon>
-                            <v-list-tile-title><b>基本資料</b></v-list-tile-title>
+                            <v-list-tile-title class="ml-1"><b>基本資料</b></v-list-tile-title>
                         </v-list-tile>
                     </router-link>
+                    <router-link to="/" style="text-decoration: none;">
+                        <v-list-tile>
+                            <v-icon right>notifications</v-icon>
+                            <v-list-tile-title class="ml-1"><b>警報設定</b></v-list-tile-title>
+                        </v-list-tile>
+                    </router-link>
+                    <router-link to="/" style="text-decoration: none;">
+                        <v-list-tile>
+                            <v-icon right>card_giftcard</v-icon>
+                            <v-list-tile-title class="ml-1"><b>喜好設定</b></v-list-tile-title>
+                        </v-list-tile>
+                    </router-link>
+
+                    <v-divider dark />
+
                     <div @click="logout">
                         <v-list-tile>
                             <v-icon right>keyboard_tab</v-icon>
-                            <v-list-tile-title><b>登出</b></v-list-tile-title>
+                            <v-list-tile-title class="ml-1"><b>登出</b></v-list-tile-title>
                         </v-list-tile>
                     </div>
                 </v-list-item>
