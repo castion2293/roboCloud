@@ -13,13 +13,27 @@
 
 <script>
     export default {
+        props: ['productId'],
         data () {
             return {
                 product: {},
             }
         },
         mounted () {
-            Event.listen('myProduct', (product) => this.product = product);
+            axios.get(`/home/getTheProduct/${this.productId}`)
+                .then(response => {
+                    this.product = response.data;
+                });
+        },
+        beforeRouteUpdate (to, from, next) {
+            // react to route changes...
+            axios.get(`/home/getTheProduct/${to.params.productId}`)
+                .then(response => {
+                    this.product = response.data;
+                });
+
+            // don't forget to call next()
+            next();
         },
         methods: {
 

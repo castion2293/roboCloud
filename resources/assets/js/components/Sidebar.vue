@@ -14,15 +14,13 @@
 
                 <v-divider light />
 
-                <router-link to="/spec" exact style="text-decoration: none;">
-                    <div @click="getProduct(product)">
-                        <v-list-tile ripple>
-                            <v-icon class="ml-2">build</v-icon>
-                            <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
-                                <b>規格</b>
-                            </v-list-tile-title>
-                        </v-list-tile>
-                    </div>
+                <router-link :to="specRoute" exact style="text-decoration: none;">
+                    <v-list-tile ripple>
+                        <v-icon class="ml-2">build</v-icon>
+                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                            <b>規格</b>
+                        </v-list-tile-title>
+                    </v-list-tile>
                 </router-link>
 
                 <v-list-group>
@@ -212,27 +210,26 @@
                 .then(response => {
                     this.product = response.data;
 
-                    // wait Spec.vue mounted the event
-                    setTimeout(() => {
-                        Event.fire('myProduct', this.product)
-                    }, 10)
+                    this.$router.push(`/spec/${this.product.id}`);
                 });
 
-            Event.listen('myProduct', (product) => this.product = product);
+            Event.listen('myProduct', (product) => {
+                this.product = product;
+
+                this.$router.push(`/spec/${this.product.id}`);
+            });
         },
 
         methods: {
-            getProduct(product) {
-                // wait Spec.vue mounted the event
-                setTimeout(() => {
-                    Event.fire('myProduct', product)
-                }, 10)
-            }
+
         },
 
         computed: {
             sidebarshow () {
                 return this.sidebar
+            },
+            specRoute () {
+                return `/spec/${this.product.id}`
             }
         }
     }

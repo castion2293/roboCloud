@@ -52,6 +52,9 @@ Route::group(['middleware' => 'auth.basic'], function () {
     Route::get('/home/getFirstProduct', function() {
         return auth()->user()->products()->first();
     });
+    Route::get('/home/getTheProduct/{productId}', function($productId) {
+       return App\Product::find($productId);
+    });
 });
 
 Route::post('postdata', function () {

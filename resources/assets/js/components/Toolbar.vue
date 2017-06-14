@@ -16,11 +16,9 @@
             <v-list>
                 <v-list-item>
                     <div v-for="product in user.products" @click="getProduct(product)">
-                        <router-link to="/spec" style="text-decoration: none;">
-                            <v-list-tile>
-                                <v-list-tile-title>{{ product.name }}</v-list-tile-title>
-                            </v-list-tile>
-                        </router-link>
+                        <v-list-tile>
+                            <v-list-tile-title>{{ product.name }}</v-list-tile-title>
+                        </v-list-tile>
                     </div>
                 </v-list-item>
             </v-list>
