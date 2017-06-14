@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>{{ user.name }}</h1>
+        <button @click="postData">click</button>
     </div>
 </template>
 
@@ -9,17 +10,11 @@
         data () {
             return {
                 user: [],
-                counter: 0,
             }
         },
 
         mounted () {
-//            axios.get('/home/getCurrentUser')
-//                .then(response => {
-//                    this.user = response.data
-//                });
             this.fetchData();
-            setInterval(this.fetchData, 10000)
         },
 
         methods: {
@@ -29,6 +24,16 @@
                         this.user = response.data
                         console.log(this.user)
                     });
+            },
+            postData () {
+                axios.post('/postdata', {
+                    firstName: 'Fred',
+                    lastName: 'zhang'
+                }).then(response => {
+                    console.log(response);
+                }).catch(error => {
+                    console.log(error);
+                });
             }
         }
 

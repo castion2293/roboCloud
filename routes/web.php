@@ -54,3 +54,7 @@ Route::group(['middleware' => 'auth.basic'], function () {
     });
 });
 
+Route::post('postdata', function () {
+    dd(request());
+});
+

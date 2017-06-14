@@ -14,13 +14,15 @@
 
                 <v-divider light />
 
-                <router-link to="/about" exact style="text-decoration: none;">
-                    <v-list-tile ripple>
-                        <v-icon class="ml-2">build</v-icon>
-                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
-                            <b>規格</b>
-                        </v-list-tile-title>
-                    </v-list-tile>
+                <router-link to="/spec" exact style="text-decoration: none;">
+                    <div @click="getProduct(product)">
+                        <v-list-tile ripple>
+                            <v-icon class="ml-2">build</v-icon>
+                            <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                                <b>規格</b>
+                            </v-list-tile-title>
+                        </v-list-tile>
+                    </div>
                 </router-link>
 
                 <v-list-group>
@@ -47,14 +49,14 @@
                     <v-list-item>
                         <v-list-tile ripple>
                             <v-list-tile-title>
-                                <b>狀態2</b>
+                                <b>手臂通訊狀態</b>
                             </v-list-tile-title>
                         </v-list-tile>
                     </v-list-item>
                     <v-list-item>
                         <v-list-tile ripple>
                             <v-list-tile-title>
-                                <b>狀態3</b>
+                                <b>手臂保養狀態</b>
                             </v-list-tile-title>
                         </v-list-tile>
                     </v-list-item>
@@ -90,14 +92,97 @@
                     </v-list-item>
                 </v-list-group>
 
-                <router-link to="" style="text-decoration: none;">
-                    <v-list-tile ripple>
-                        <v-icon class="ml-2">settings</v-icon>
-                        <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
-                            <b>設定</b>
-                        </v-list-tile-title>
-                    </v-list-tile>
-                </router-link>
+                <v-list-group>
+                    <v-list-item slot="item">
+                        <v-list-tile ripple>
+                            <v-icon class="ml-2">error_outline</v-icon>
+                            <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                                <b>異常</b>
+                            </v-list-tile-title>
+                            <v-list-tile-action>
+                                <v-icon>keyboard_arrow_down</v-icon>
+                            </v-list-tile-action>
+                        </v-list-tile>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>手臂異常歷史</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>循環異常歷史</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>通訊異常歷史</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                </v-list-group>
+
+                <v-list-group>
+                    <v-list-item slot="item">
+                        <v-list-tile ripple>
+                            <v-icon class="ml-2">settings</v-icon>
+                            <v-list-tile-title class="ml-2" style="font-size: 1.5em;">
+                                <b>設定</b>
+                            </v-list-tile-title>
+                            <v-list-tile-action>
+                                <v-icon>keyboard_arrow_down</v-icon>
+                            </v-list-tile-action>
+                        </v-list-tile>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="/profile" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>基本資料</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>公司資料設定</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>警報設定</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b>喜好設定</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                </v-list-group>
+
                 <router-link to="" style="text-decoration: none;">
                     <v-list-tile ripple>
                         <v-icon class="ml-2">local_phone</v-icon>
@@ -126,19 +211,23 @@
             axios.get('/home/getFirstProduct')
                 .then(response => {
                     this.product = response.data;
+
+                    // wait Spec.vue mounted the event
+                    setTimeout(() => {
+                        Event.fire('myProduct', this.product)
+                    }, 10)
                 });
 
             Event.listen('myProduct', (product) => this.product = product);
         },
 
-        created() {
-            this.$on('myProduct', );
-        },
-
         methods: {
-            setSelectedClient(product) {
-                console.log(product);
-            },
+            getProduct(product) {
+                // wait Spec.vue mounted the event
+                setTimeout(() => {
+                    Event.fire('myProduct', product)
+                }, 10)
+            }
         },
 
         computed: {
