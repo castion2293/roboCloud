@@ -1,6 +1,6 @@
 <template>
-    <v-toolbar class="grey darken-2">
-        <v-toolbar-side-icon class="hidden-lg-and-up" @click.native.stop="$emit('toggle-sidebar')"  />
+    <v-toolbar fixed class="grey darken-2">
+        <v-toolbar-side-icon light @click.native.stop="$emit('toggle-sidebar')"></v-toolbar-side-icon>
         <v-toolbar-title class="blue--text darken-1" style="font-family: Monda;font-size: 2em;">ROBOTECH CLOUD</v-toolbar-title>
         <v-spacer></v-spacer>
 
@@ -23,7 +23,6 @@
                 </v-list-item>
             </v-list>
         </v-menu>
-
 
         <v-list-tile avatar>
             <v-list-tile-avatar>
@@ -77,6 +76,7 @@
         </v-menu>
 
         <a href="/auth/logout" ref="logout_link" style="display:none;"></a>
+
     </v-toolbar>
 </template>
 

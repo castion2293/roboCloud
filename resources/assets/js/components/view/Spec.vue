@@ -1,13 +1,18 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+    <div>
+        <v-layout row wrap>
+            <v-flex xs2>
                 <div class="panel panel-default">
                     <img :src="product.product_img" style="height:10em;width:10em;"  />
                     <p class="text-xs-center mt-2 pb-2 w3-text-black"><b>{{ product.name }}</b></p>
                 </div>
-            </div>
-        </div>
+            </v-flex>
+            <v-flex xs10>
+                <v-card class="primary">
+                    <v-card-text>12</v-card-text>
+                </v-card>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
