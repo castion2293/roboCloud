@@ -4,7 +4,7 @@
             <v-list-item>
                 <v-list-tile tag="div">
                     <v-list-tile-content>
-                        <v-list-tile-title><b class="w3-text-white">{{ product.name }}</b></v-list-tile-title>
+                        <v-list-tile-title class="text-xs-center"><b class="w3-text-white">{{ product.name }}</b></v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>
                         <v-btn light icon @click.native.stop="mini = !mini">
@@ -14,7 +14,7 @@
                 </v-list-tile>
 
                 <v-list-tile-content>
-                    <div class="grey darken-1 mt-3">
+                    <div class="ml-5 mt-2">
                         <img :src="product.product_img" style="height:10em;width:10em;"  />
                     </div>
                 </v-list-tile-content>

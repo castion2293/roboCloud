@@ -1,32 +1,41 @@
 <template>
-    <div class="w3-container">
-        <v-card>
-            <div class="w3-bar grey lighten-2">
-                <button class="w3-bar-item w3-button" :class="block.btnColor[0]" @click="toggleChart(0)"><b>單日產能</b></button>
-                <button class="w3-bar-item w3-button" :class="block.btnColor[1]" @click="toggleChart(1)"><b>累計產能</b></button>
-                <button class="w3-bar-item w3-button" :class="block.btnColor[2]" @click="toggleChart(2)"><b>圓餅圖</b></button>
-            </div>
-
-            <div v-show="block.show[0]">
-                <v-card class="grey lighten-3">
-                    <yield-data></yield-data>
+    <v-card>
+        <v-tabs grow light>
+            <v-tabs-bar slot="activators">
+                <v-tabs-slider></v-tabs-slider>
+                <v-tabs-item :href="'#mobile-tabs-3-1'">
+                    <b>單日產能</b>
+                </v-tabs-item>
+                <v-tabs-item :href="'#mobile-tabs-3-2'">
+                    <b>累計產能</b>
+                </v-tabs-item>
+                <v-tabs-item :href="'#mobile-tabs-3-3'">
+                    <b>圓餅圖</b>
+                </v-tabs-item>
+            </v-tabs-bar>
+            <v-tabs-content :id="'mobile-tabs-3-1'">
+                <v-card flat class="grey lighten-4">
+                    <v-card-text>
+                        <yield-data></yield-data>
+                    </v-card-text>
                 </v-card>
-            </div>
-
-            <div v-show="block.show[1]">
-                <v-card class="grey lighten-3">
-                    <yield-cumulate-data></yield-cumulate-data>
+            </v-tabs-content>
+            <v-tabs-content :id="'mobile-tabs-3-2'">
+                <v-card flat class="grey lighten-4">
+                    <v-card-text>
+                        <yield-cumulate-data></yield-cumulate-data>
+                    </v-card-text>
                 </v-card>
-            </div>
-
-            <div v-show="block.show[2]">
-                <v-card class="grey lighten-3" style="width:50%;">
-                    <yield-pie-data></yield-pie-data>
+            </v-tabs-content>
+            <v-tabs-content :id="'mobile-tabs-3-3'" class="grey lighten-4">
+                <v-card flat class="grey lighten-4" style="width:50%;">
+                    <v-card-text>
+                        <yield-pie-data></yield-pie-data>
+                    </v-card-text>
                 </v-card>
-            </div>
-        </v-card>
-    </div>
-
+            </v-tabs-content>
+        </v-tabs>
+    </v-card>
 </template>
 
 <script>
@@ -43,32 +52,32 @@
 
         data () {
             return {
-                block: {
-                    show: [
-                        true,
-                        false,
-                        false,
-                    ],
-                    btnColor: [
-                        'grey lighten-3',
-                        'grey lighten-2',
-                        'grey lighten-2',
-                    ]
-                }
+//                block: {
+//                    show: [
+//                        true,
+//                        false,
+//                        false,
+//                    ],
+//                    btnColor: [
+//                        'grey lighten-3',
+//                        'grey lighten-2',
+//                        'grey lighten-2',
+//                    ]
+//                }
             }
         },
 
         methods: {
-            toggleChart (seed) {
-
-                for(let i = 0; i < this.block.show.length; i++) {
-                    this.$set(this.block.show, i, false);
-                    this.$set(this.block.btnColor, i, 'grey lighten-2');
-                }
-
-                this.$set(this.block.show, seed, true);
-                this.$set(this.block.btnColor, seed, 'grey lighten-3');
-            }
+//            toggleChart (seed) {
+//
+//                for(let i = 0; i < this.block.show.length; i++) {
+//                    this.$set(this.block.show, i, false);
+//                    this.$set(this.block.btnColor, i, 'grey lighten-2');
+//                }
+//
+//                this.$set(this.block.show, seed, true);
+//                this.$set(this.block.btnColor, seed, 'grey lighten-3');
+//            }
         }
     }
 </script>

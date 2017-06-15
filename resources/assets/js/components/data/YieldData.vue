@@ -14,7 +14,7 @@
                         labels: ["5月21日", "5月22日", "5月23日", "5月24日", "5月25日", "5月26日", "5月27日"],
                         datasets: [{
                             label: '良品',
-                            backgroundColor: 'rgba(54, 162, 235, 0.4)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.8)',
                             borderColor: 'rgba(54, 162, 235, 1)',
                             data: [
                                 this.randomScalingFactor() + 200,
@@ -29,7 +29,7 @@
                         },
                         {
                             label: '不良品',
-                            backgroundColor: 'rgba(255, 206, 86, 0.4)',
+                            backgroundColor: 'rgba(255, 206, 86, 0.8)',
                             borderColor: 'rgba(255, 206, 86, 1)',
                             data: [
                                 this.randomScalingFactor(),
