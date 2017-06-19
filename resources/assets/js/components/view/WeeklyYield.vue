@@ -4,7 +4,7 @@
             <v-tabs-bar slot="activators">
                 <v-tabs-slider></v-tabs-slider>
                 <v-tabs-item :href="'#mobile-tabs-3-1'">
-                    <b>單日產能</b>
+                    <b>單週產能</b>
                 </v-tabs-item>
                 <v-tabs-item :href="'#mobile-tabs-3-2'">
                     <b>累計產能</b>
@@ -39,9 +39,9 @@
 </template>
 
 <script>
-    import yieldData from '../data/YieldData.vue';
-    import yieldCumulateData from '../data/YieldCumulateData.vue';
-    import yieldPieData from '../data/YieldPieData.vue';
+    import yieldData from '../data/WeeklyYieldData.vue';
+    import yieldCumulateData from '../data/WeeklyYieldCumulateData.vue';
+    import yieldPieData from '../data/WeeklyYieldPieData.vue';
 
     export default {
         components: {

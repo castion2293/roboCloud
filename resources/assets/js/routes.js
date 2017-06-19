@@ -15,8 +15,16 @@ let routes = [
         component: require('./components/view/State.vue')
     },
     {
-        path: '/yield',
-        component: require('./components/view/Yield.vue')
+        path: '/weekly_yield',
+        component: require('./components/view/WeeklyYield.vue')
+    },
+    {
+        path: '/monthly_yield',
+        component: require('./components/view/MonthlyYield.vue')
+    },
+    {
+        path: '/yearly_yield',
+        component: require('./components/view/YearlyYield.vue')
     },
 ];
 

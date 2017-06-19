@@ -95,20 +95,31 @@
                         </v-list-tile>
                     </v-list-item>
                     <v-list-item>
-                        <router-link to="/yield" style="text-decoration: none;">
+                        <router-link to="/weekly_yield" style="text-decoration: none;">
                             <v-list-tile ripple>
                                 <v-list-tile-title>
-                                    <b class="w3-text-white">每週產能</b>
+                                    <b class="w3-text-white">週產能</b>
                                 </v-list-tile-title>
                             </v-list-tile>
                         </router-link>
                     </v-list-item>
                     <v-list-item>
-                        <v-list-tile ripple>
-                            <v-list-tile-title>
-                                <b class="w3-text-white">每月產能</b>
-                            </v-list-tile-title>
-                        </v-list-tile>
+                        <router-link to="/monthly_yield" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b class="w3-text-white">月產能</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
+                    </v-list-item>
+                    <v-list-item>
+                        <router-link to="/yearly_yield" style="text-decoration: none;">
+                            <v-list-tile ripple>
+                                <v-list-tile-title>
+                                    <b class="w3-text-white">年產能</b>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </router-link>
                     </v-list-item>
                 </v-list-group>
 
