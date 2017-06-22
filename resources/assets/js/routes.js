@@ -26,6 +26,18 @@ let routes = [
         path: '/yearly_yield',
         component: require('./components/view/YearlyYield.vue')
     },
+    {
+        path: '/robot_error_log',
+        component: require('./components/view/RobotErrorLog.vue')
+    },
+    {
+        path: '/cycle_error_log',
+        component: require('./components/view/CycleErrorLog.vue')
+    },
+    {
+        path: '/comm_error_log',
+        component: require('./components/view/CommErrorLog.vue')
+    },
 ];
 
 export default new VueRouter({

@@ -140,7 +140,7 @@
                         </v-list-tile>
                     </v-list-item>
                     <v-list-item>
-                        <router-link to="" style="text-decoration: none;">
+                        <router-link to="/robot_error_log" style="text-decoration: none;">
                             <v-list-tile ripple>
                                 <v-list-tile-title>
                                     <b class="w3-text-white">手臂異常歷史</b>
@@ -149,7 +149,7 @@
                         </router-link>
                     </v-list-item>
                     <v-list-item>
-                        <router-link to="" style="text-decoration: none;">
+                        <router-link to="/cycle_error_log" style="text-decoration: none;">
                             <v-list-tile ripple>
                                 <v-list-tile-title>
                                     <b class="w3-text-white">循環異常歷史</b>
@@ -158,7 +158,7 @@
                         </router-link>
                     </v-list-item>
                     <v-list-item>
-                        <router-link to="" style="text-decoration: none;">
+                        <router-link to="/comm_error_log" style="text-decoration: none;">
                             <v-list-tile ripple>
                                 <v-list-tile-title>
                                     <b class="w3-text-white">通訊異常歷史</b>
