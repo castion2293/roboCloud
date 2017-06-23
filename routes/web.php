@@ -55,6 +55,9 @@ Route::group(['middleware' => 'auth.basic'], function () {
     Route::get('/home/getTheProduct/{productId}', function($productId) {
        return App\Product::find($productId);
     });
+
+    // PDF download
+    Route::get('/home/getPDF', 'PDFController@getPDF');
 });
 
 Route::post('postdata', function () {
