@@ -27,7 +27,7 @@
 
         <robot-error-log-data></robot-error-log-data>
 
-        <a href="/home/getPDF" ref="PDF_link" style="display:none;"></a>
+        <a :href="PDFUrl" ref="PDF_link" style="display:none;">here</a>
     </div>
 </template>
 
@@ -38,9 +38,16 @@
         components: {
             'robot-error-log-data': robotErrorLogData,
         },
+        data () {
+            return {
+                PDFUrl : '/home/getPDF'
+            }
+        },
         methods: {
             getPDF () {
                 let PDF = this.$refs.PDF_link;
+                PDF.href = `${this.PDFUrl}?key=2`;
+//                console.log(PDF);
                 PDF.click();
             }
         }

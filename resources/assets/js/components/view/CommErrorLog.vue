@@ -1,79 +1,54 @@
 <template>
-    <v-card>
-        <v-data-table
-            :headers="headers"
-            :items="items"
-            hide-action
-            class="elevation-1 grey lighten-3"
-        >
-            <template slot="items" scope="props">
-                <td>{{ props.item.name }}</td>
-                <td class="text-xs-left">{{ props.item.code }}</td>
-                <td class="text-xs-left">{{ props.item.description }}</td>
-                <td class="text-xs-left">{{ props.item.datetime }}</td>
-            </template>
-        </v-data-table>
-    </v-card>
+    <div>
+        <div class="text-xs-right mb-2 mr-1">
+            <v-menu
+                transition="v-slide-y-transition"
+                bottom
+            >
+                <v-btn slot="activator" class="grey darken-1">
+                    <v-icon light rihgt class="mr-2">cloud_download</v-icon>
+                    <b class="w3-text-white" style="font-size:1.3em;">匯出</b>
+                </v-btn>
+                <v-list>
+                    <v-list-item>
+                        <div @click="getPDF">
+                            <v-list-tile>
+                                <v-list-tile-title>PDF</v-list-tile-title>
+                            </v-list-tile>
+                        </div>
+
+                        <v-list-tile>
+                            <v-list-tile-title>Excel</v-list-tile-title>
+                        </v-list-tile>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+        </div>
+
+        <cycle-error-log-data></cycle-error-log-data>
+
+        <a :href="PDFUrl" ref="PDF_link" style="display:none;">here</a>
+    </div>
 </template>
 
 <script>
+    import commErrorLogData from '../data/CommErrorLogData.vue';
+
     export default {
+        components: {
+            'cycle-error-log-data': commErrorLogData,
+        },
         data () {
             return {
-                headers: [
-                    {
-                        text: '異常名稱',
-                        left: true,
-                        value: 'name'
-                    },
-                    {
-                        text: '異常代碼',
-                        left:true,
-                        value: 'code'
-                    },
-                    {
-                        text: '異常敘述',
-                        left: true,
-                        value: 'description'
-                    },
-                    {
-                        text: '日期/時間',
-                        left: true,
-                        value: 'datetime'
-                    },
-                ],
-                items: [
-                    {
-                        name: 'Filedbus Parameter error',
-                        code: '8-353',
-                        description: 'An error occurred in the Filedbus parameter and an emergency stop was applied',
-                        datetime: '2017-06-22/13:34:35'
-                    },
-                    {
-                        name: 'Filedbus Offline',
-                        code: '8-354',
-                        description: 'An error occurred in the Filedbus parameter and an emergency stop was applied',
-                        datetime: '2017-06-22/13:34:35'
-                    },
-                    {
-                        name: 'Filedbus Board error',
-                        code: '8-355',
-                        description: 'The Fieldbus printed board type is incorrect',
-                        datetime: '2017-06-22/13:34:35'
-                    },
-                    {
-                        name: 'Axis1 communication error',
-                        code: '8-561',
-                        description: 'An encoderbroken wire error was detected in Axis',
-                        datetime: '2017-06-22/13:34:35'
-                    },
-                    {
-                        name: 'PLC user alarm',
-                        code: '4-077',
-                        description: 'A level 4 user alarm has occurred in the internal PLC',
-                        datetime: '2017-06-22/13:34:35'
-                    },
-                ]
+                PDFUrl : '/home/getPDF'
+            }
+        },
+        methods: {
+            getPDF () {
+                let PDF = this.$refs.PDF_link;
+                PDF.href = `${this.PDFUrl}?key=2`;
+//                console.log(PDF);
+                PDF.click();
             }
         }
     }
