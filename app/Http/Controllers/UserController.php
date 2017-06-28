@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Image;
+use Storage;
 
 class UserController extends Controller
 {
@@ -69,7 +72,20 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $imageData = $request->get('image');
+
+        $fileName = Carbon::now()->timestamp . '_' . uniqid() . '.' . explode('/', explode(':', substr($imageData, 0, strpos($imageData, ';')))[1])[1];
+        Storage::disk('s3')->put('/profile_image/'.$fileName, Image::make($imageData)->stream()
+            ->__toString(), 'public');
+
+        $user->update([
+           'name' => $request->name,
+           'email' => $request->email,
+           'phone_number' => $request->phone_number,
+           'user_profile_img' => 'https://s3.amazonaws.com/robotechcloud/profile_image/' . $fileName,
+        ]);
+
+        return response()->json(['user' => $user, 'error'=>false]);
     }
 
     /**

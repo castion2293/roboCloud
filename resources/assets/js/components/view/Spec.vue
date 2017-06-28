@@ -4,7 +4,7 @@
             <v-layout row wrap>
                 <v-flex md4>
                     <div class="panel panel-default mt-3 pl-5">
-                        <img :src="product.product_img"/>
+                        <img :src="product.product_img">
                     </div>
                 </v-flex>
                 <v-flex md8>

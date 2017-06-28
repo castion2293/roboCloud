@@ -56,11 +56,12 @@ Route::group(['middleware' => 'auth.basic'], function () {
        return App\Product::find($productId);
     });
 
+    Route::resource('/user', 'UserController');
+
     // PDF download
     Route::get('/home/getPDF', 'PDFController@getPDF');
+
 });
 
-Route::post('postdata', function () {
-    dd(request());
-});
+
 

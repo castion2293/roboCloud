@@ -7,14 +7,16 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-dompdf": "^0.8.0",
+        "doctrine/dbal": "^2.5",
         "guzzlehttp/guzzle": "^6.2",
+        "intervention/image": "^2.3",
         "jenssegers/agent": "^2.5",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "league/flysystem-aws-s3-v3": "1.0.16"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.3",
-        "doctrine/dbal": "^2.5",
         "fzaninotto/faker": "~1.4",
         "laravel/dusk": "^1.1",
         "mockery/mockery": "0.9.*",

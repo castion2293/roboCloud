@@ -89,7 +89,7 @@
         },
 
         mounted () {
-            axios.get('/home/getCurrentUser')
+            axios.get('home/getCurrentUser')
                 .then(response => {
                     this.user = response.data;
                 });

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->string('user_profile_img')->default('https://s3-us-west-2.amazonaws.com/zhoker/profile_images/1486175258.png');
+            $table->string('user_profile_img')->default('https://s3.amazonaws.com/robotechcloud/profile_image/1498606783_5952ecbf156ca.png');
             $table->timestamps();
         });
     }

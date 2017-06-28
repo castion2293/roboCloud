@@ -180,6 +180,7 @@ return [
 
         Jenssegers\Agent\AgentServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
