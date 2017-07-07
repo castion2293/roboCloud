@@ -139,4 +139,11 @@ return [
         'username'              => '使用者名字',
         'year'                  => '年',
     ],
+
+    'image64' => ':attribute 必須為 :values 的檔案。',
+//    'custom' => [
+//        'attribute-name' => [
+//            'rule-name' => 'custom-message',
+//        ],
+//    ],
 ];

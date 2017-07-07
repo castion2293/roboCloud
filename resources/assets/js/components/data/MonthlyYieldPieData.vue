@@ -18,8 +18,8 @@
                                 'rgba(255, 235, 59, 1)',
                             ],
                             data: [
-                                6877,
-                                1189,
+                                this.randomScalingFactor() + 1400,
+                                this.randomScalingFactor() + 300,
                             ],
                         }]
                     },
@@ -46,6 +46,9 @@
             fetchData () {
                 let ctx = this.$refs.canvas;
                 this.myChart = new Chart(ctx, this.config);
+            },
+            randomScalingFactor () {
+                return Math.abs((Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100));
             },
         }
     }

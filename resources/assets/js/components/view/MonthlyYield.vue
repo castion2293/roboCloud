@@ -28,10 +28,33 @@
                 </v-card>
             </v-tabs-content>
             <v-tabs-content :id="'mobile-tabs-3-3'" class="grey lighten-4">
-                <v-card flat class="grey lighten-4" style="width:50%;">
-                    <v-card-text>
-                        <yield-pie-data></yield-pie-data>
-                    </v-card-text>
+                <v-card flat class="grey lighten-4">
+                    <v-layout row wrap>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>第一週</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>第二週</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>第三週</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>第四週</b>
+                            </div>
+                        </v-flex>
+                    </v-layout>
                 </v-card>
             </v-tabs-content>
         </v-tabs>

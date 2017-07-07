@@ -4,7 +4,9 @@
             <h6 class="w3-bottombar"><b>基本資料</b></h6>
             <v-layout row wrap>
                 <v-flex md3>
-                    <img :src="user.user_profile_img">
+                    <div>
+                        <img :src="user.user_profile_img" style="width:100%;">
+                    </div>
                 </v-flex>
                 <v-flex md3>
                     <div>
@@ -34,14 +36,16 @@
                                     ></v-text-field>
                                 </v-card-text>
                             </v-card-row>
-                            <v-card-row class="pl-5 pr-5">
-                                <div>
-                                    <img ref="Image" :src="user.user_profile_img" style="width:100%">
+                            <v-card-row>
+                                <div class="text-xs-center" style="width:100%;">
+                                    <img ref="Image" :src="user.user_profile_img" style="width:80%">
                                 </div>
                             </v-card-row>
                             <v-card-row class="mt-2">
                                 <input type="file" ref="myFile" name="user_profile_img" @change="readURL($refs.myFile);" style="display:none;">
-                                <v-btn dark default class="btn--dark-flat-pressed z-depth-2" @click.native="$refs.myFile.click()">上傳照片</v-btn>
+                                <div class="text-xs-center" style="width:100%;">
+                                    <v-btn dark default class="btn--dark-flat-pressed z-depth-2" @click.native="$refs.myFile.click()" style="width:80%;"><b>上傳照片</b></v-btn>
+                                </div>
                             </v-card-row>
                             <v-card-row actions>
                                 <v-btn class="blue--text darken-1" flat @click.native="dialog = false">關閉</v-btn>
@@ -67,7 +71,9 @@
                     email: '',
                     phone_number: '',
                     image: '',
-                }
+                },
+                errors: [],
+                user_name: '',
             }
         },
 
@@ -79,8 +85,11 @@
             fetchData () {
                 axios.get('home/getCurrentUser')
                     .then(response => {
-                        this.user = response.data
-                        this.set = this.user;
+                        this.user = response.data;
+//                        this.set = response.data;
+                        this.set.name = this.user.name;
+                        this.set.email = this.user.email;
+                        this.set.phone_number = this.user.phone_number;
                     });
             },
             postData () {
@@ -89,9 +98,12 @@
                 axios.put(`user/${this.user.id}`, this.set)
                     .then(response => {
                         this.user = response.data.user;
-                        this.set = this.user;
+                        this.set = response.data.user;
                     }).catch(error => {
-                        console.log(error);
+                        this.errors = error.response.data;
+                        console.log(this.errors);
+                        console.log(this.errors.name);
+                        this.dialog = true;
                     });
             },
             readURL (input) {

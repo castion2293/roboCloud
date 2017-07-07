@@ -28,10 +28,45 @@
                 </v-card>
             </v-tabs-content>
             <v-tabs-content :id="'mobile-tabs-3-3'" class="grey lighten-4">
-                <v-card flat class="grey lighten-4" style="width:50%;">
-                    <v-card-text>
-                        <yield-pie-data></yield-pie-data>
-                    </v-card-text>
+                <v-card flat class="grey lighten-4">
+                    <v-layout row wrap>
+                        <v-flex md4 class="container pl-4 pr-4">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>5月21日</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md4 class="container pl-4 pr-4">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>5月22日</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md4 class="container pl-4 pr-4">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>5月23日</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md4 class="container pl-4 pr-4">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>5月24日</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md4 class="container pl-4 pr-4">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>5月25日</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md4 class="container pl-4 pr-4">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>5月26日</b>
+                            </div>
+                        </v-flex>
+                    </v-layout>
                 </v-card>
             </v-tabs-content>
         </v-tabs>

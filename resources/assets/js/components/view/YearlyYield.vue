@@ -28,10 +28,81 @@
                 </v-card>
             </v-tabs-content>
             <v-tabs-content :id="'mobile-tabs-3-3'" class="grey lighten-4">
-                <v-card flat class="grey lighten-4" style="width:50%;">
-                    <v-card-text>
-                        <yield-pie-data></yield-pie-data>
-                    </v-card-text>
+                <v-card flat class="grey lighten-4">
+                    <v-layout row wrap>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>一月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>二月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>三月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>四月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>五月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>六月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>七月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>八月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>九月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>十月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>十一月</b>
+                            </div>
+                        </v-flex>
+                        <v-flex md3 class="container pl-3 pr-3">
+                            <yield-pie-data></yield-pie-data>
+                            <div class="text-xs-center mt-1 grey--text darken-2">
+                                <b>十二月</b>
+                            </div>
+                        </v-flex>
+                    </v-layout>
                 </v-card>
             </v-tabs-content>
         </v-tabs>
