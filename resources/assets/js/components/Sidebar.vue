@@ -203,7 +203,7 @@
                         </router-link>
                     </v-list-item>
                     <v-list-item>
-                        <router-link to="" style="text-decoration: none;">
+                        <router-link to="/alarm_setting" style="text-decoration: none;">
                             <v-list-tile ripple>
                                 <v-list-tile-title>
                                     <b class="w3-text-white">警報設定</b>

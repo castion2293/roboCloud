@@ -38,6 +38,10 @@ let routes = [
         path: '/comm_error_log',
         component: require('./components/view/CommErrorLog.vue')
     },
+    {
+        path: '/alarm_setting',
+        component: require('./components/view/AlarmSetting.vue')
+    },
 ];
 
 export default new VueRouter({
